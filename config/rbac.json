@@ -1,0 +1,12 @@
+[
+  {
+    "method": "GET",
+    "route": "/api/v1/service1/resource",
+    "permissions": ["service1.resource.read"]
+  },
+  {
+    "method": "POST",
+    "route": "/api/v1/service1/resource",
+    "permissions": ["service1.resource.write"]
+  }
+]

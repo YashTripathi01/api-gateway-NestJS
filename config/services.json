@@ -1,0 +1,17 @@
+{
+  "routes": [
+    {
+      "prefix": "/api/v1/service1",
+      "target": "http://localhost:3001",
+      "stripPrefix": true,
+      "timeout": 30000,
+      "public": false
+    },
+    {
+      "prefix": "/api/v1/auth",
+      "target": "http://localhost:4000",
+      "stripPrefix": true,
+      "public": true
+    }
+  ]
+}
