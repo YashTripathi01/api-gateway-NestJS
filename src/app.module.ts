@@ -1,7 +1,6 @@
 import { AppController } from '@/app.controller';
 import { AppService } from '@/app.service';
 import { GatewayModule } from '@/gateway/gateway.module';
-import { AuditLog, AuditLogSchema } from '@/logging/auditLog.schema';
 import { ExceptionLoggingFilter } from '@/logging/exceptionLogging.filter';
 import { LoggingModule } from '@/logging/logging.module';
 import { Module } from '@nestjs/common';
