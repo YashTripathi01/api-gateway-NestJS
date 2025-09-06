@@ -27,12 +27,6 @@ export class ProxyMiddleware implements NestMiddleware {
     // Helpful for audit logging
     (req as any).targetService = match.target;
 
-    // compute forwarded path (strip prefix if configured)
-    const originalPath = req.path;
-    const forwardedPath = match.stripPrefix
-      ? originalPath.replace(match.prefix, '') || '/'
-      : originalPath;
-
     // v3 API: use `on` for events and `logger` instead of logProvider
     const proxy = createProxyMiddleware({
       target: match.target,

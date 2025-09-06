@@ -1,4 +1,4 @@
-import { AuthenticatedRequest } from '@/gateway/jwtAuth.middleware';
+import { AuthenticatedRequest } from '@/common/authenticatedRequest.interface';
 import { AuditLoggerService } from '@/logging/auditLogger.service';
 import { Injectable, NestMiddleware } from '@nestjs/common';
 import { NextFunction, Response } from 'express';

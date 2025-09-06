@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 app.use(bodyParser.json());
 
-const JWT_SECRET = process.env.JWT_SECRET;
+const JWT_SECRET = process.env.JWT_SECRET || '';
 
 // Simple in-memory users
 const users = {
@@ -31,7 +31,14 @@ app.post('/login', (req, res) => {
   if (!user) {
     return res.status(401).json({ message: 'Invalid credentials' });
   }
-  const token = jwt.sign(user, JWT_SECRET, { expiresIn: '1h' });
+
+  const payload = {
+    sub: user.userId,
+    role: user.role,
+    permissions: user.permissions,
+  };
+
+  const token = jwt.sign(payload, JWT_SECRET, { expiresIn: '1h' });
   res.json({ token });
 });
 

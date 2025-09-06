@@ -8,5 +8,10 @@
     "method": "POST",
     "route": "/api/v1/service1/resource",
     "permissions": ["service1.resource.write"]
+  },
+  {
+    "method": "GET",
+    "route": "/api/v1/service1/hello",
+    "permissions": ["service1.resource.read"]
   }
 ]

@@ -1,5 +1,6 @@
 import { AppController } from '@/app.controller';
 import { AppService } from '@/app.service';
+import { HealthController } from '@/common/health.controller';
 import { GatewayModule } from '@/gateway/gateway.module';
 import { ExceptionLoggingFilter } from '@/logging/exceptionLogging.filter';
 import { LoggingModule } from '@/logging/logging.module';
@@ -17,7 +18,7 @@ import { MongooseModule } from '@nestjs/mongoose';
     GatewayModule,
     MongooseModule.forRoot(process.env.MONGODB_URI || ''),
   ],
-  controllers: [AppController],
+  controllers: [AppController, HealthController],
   providers: [
     AppService,
     { provide: APP_FILTER, useClass: ExceptionLoggingFilter },
